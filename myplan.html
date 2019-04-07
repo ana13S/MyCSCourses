@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Level Up!</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+    <script src="displayList.js" type="text/javascript"></script>
+    <script src="playlistExtractor.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="webname" style="text-align:center;line-height:100px;height:100px;font-size:35px;">
+                LEVEL UP!
+            </div>
+
+            <ul class="main-nav" style="text-align:center;line-height:20px;height:20px;font-size:15px;">
+                <li><a href="">HOME</a></li>
+                <li class="active"><a href="">MY PLAN</a></li>
+        </div>
+    </header>
+
+    <center>
+        <div class="list">
+            <div class="items">
+                <div class="item" id="item1">
+                    <p><br></p>
+                    <div class="thumbnail">
+                        <img id="thumbnail1" alt="Poster" style="width:210px;height:160px;">
+                    </div>
+                    <div class="description">
+                        <a href="" id="link1"><h3 id="title1">TITLE</h3></a>
+                        <h4 id="author1">Author</h4>
+                        <h4 id="content1">Content</h4>
+                    </div>
+                    <div class="right-panel">
+                        <h3 id="price1">$0</h3>
+                        <button type="button1" class="btn btn-default btn-sm" id="btnAdd">
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </center>
+
+    <script type="text/javascript">
+        var IdArr = [];
+        
+        const config = {
+            apiKey: "AIzaSyAya7y971pPxYE4no2UW7DtGvZvAAdSIQ4",
+            authDomain: "mycscourses-438b9.firebaseapp.com",
+            databaseURL: "https://mycscourses-438b9.firebaseio.com",
+            projectId: "mycscourses-438b9",
+            storageBucket: "mycscourses-438b9.appspot.com",
+            messagingSenderId: "449997882078"
+        };
+        firebase.initializeApp(config);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in. Remain on homepage
+                var email = user.email;
+
+            } else {
+                window.location = 'index.html'
+            }
+        });
+
+        var database = firebase.database().ref();
+        function writeData()
+
+    </script>
+
+
+
+</body>
+</html>
