@@ -34,7 +34,6 @@ header
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size:15px;
 }
-
 .main-nav li.active a{
 	border: 2px solid black;
 }
@@ -42,7 +41,6 @@ header
 .main-nav li a:hover{
 	border: 2px solid black;
 }
-
 .dropbtn {
   background-color: salmon;
   color: white;
@@ -69,55 +67,35 @@ header
 
 #myInput:focus {outline: 3px solid #ddd;}
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
 
-
-.card{
+.item {
+	margin-top:15px;
 	background-color: pink;
 	height:200px;
 	width:1000px;
 	border: 1px solid black;
 }
 
-.pic{
+.thumbnail {
 	float:left;
 	width:300px;
 	padding:5px;
 }
 
-.words{
-	float:left;
+.description {
+  float:left;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	width:300px;
 	padding:5px;
 	text-align:left;
 }
 
-.buttons{
-	float:left;
+.right-panel {
+  float:left;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	width:300px;
 	padding:5px;
 }
