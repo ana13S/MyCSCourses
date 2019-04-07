@@ -1,21 +1,26 @@
-
+﻿
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Level Up!</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="homepage.css">
-
+	<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+	<script src="displayList.js" type="text/javascript"></script>
+	<script src="playlistExtractor.js" type="text/javascript"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<header>
 		<div class = "row">
-			<div class = "webname" style="text-align:center;line-height:100px;height:100px;font-size:35px;">Level Up!
+			<div class = "webname" style="text-align:center;line-height:100px;height:100px;font-size:35px;">LEVEL UP!
 			</div>
 
 		<ul class="main-nav" style="text-align:center;line-height:20px;height:20px;font-size:15px;">
-			<li class="active"><a href="">Home</a></li>
-			<li><a href="">My Course</a></li>
+			<li class="active"><a href="">HOME</a></li>
+			<li><a href="">MY PLAN</a></li>
 		</div>
 	</header>
 
@@ -60,40 +65,83 @@
 	</center>
 
 <center>
-<div class="listing">
-	<div class="cards">
-		<div class="card">
+    <div class="price_option">
+        <label class="check">
+            <input type="checkbox" id="low" onchange="pricedisplay(this)">Price: Low to High
+        </label>
+    </div>
+</center>
+
+<center>
+<div class="list">
+	<div class="items">
+		<div class="item" id="item1">
 			<p><br></p>
-			<div class="pic">
-				<img src="WeCanDoIt.jpg" alt="Poster" style="width:125px;height:160px;">
+			<div class="thumbnail">
+				<img id="thumbnail1" alt="Poster" style="width:210px;height:160px;">
 			</div>
-			<div class="words">
-				<h3>TITLE</h3>
-				<h4>Author</h4>
-				<h4>Content</h4>
-				<p>Description</p>
+			<div class="description">
+				<a href="" id="link1"><h3 id="title1">TITLE</h3></a>
+				<h4 id="author1">Author</h4>
+				<h4 id="content1">Content</h4>
 			</div>
-			<div class="buttons">
-				<h3>$0</h3>
-				<button type="button" class="btn btn-default btn-sm">Add
+			<div class="right-panel">
+				<h3 id="price1">$0</h3>
+				<button type="button1" class="btn btn-default btn-sm" id = "btnAdd">Add
         		</button>
 			</div>
 		</div>
+
 	</div>
 </div>
 </center>
 
 <script type="text/javascript">
+	var IdArr=[];
 	function doalert(checkboxEle, id){
 		if(checkboxEle.checked){
-			console.log("Checked");
-			console.log(id);
-			//add id
+			console.log(id, "CHECKED");
+			IdArr.push(id);
 		}
-		else{
+		else {
 			console.log("UNCHECKED");
+			for( var i = 0; i<IdArr.length; i++) {
+				if(IdArr[i] == id) {
+					IdArr.splice(i, 1);
+				}
+			}
 		}
+		console.log(IdArr);
+		displayList(IdArr);
 	}
+    const config = {
+        apiKey: "AIzaSyAya7y971pPxYE4no2UW7DtGvZvAAdSIQ4",
+        authDomain: "mycscourses-438b9.firebaseapp.com",
+        databaseURL: "https://mycscourses-438b9.firebaseio.com",
+        projectId: "mycscourses-438b9",
+        storageBucket: "mycscourses-438b9.appspot.com",
+        messagingSenderId: "449997882078"
+    };
+    firebase.initializeApp(config);
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in. Remain on homepage
+    } else {
+      window.location = 'index.html'
+    }
+});
+
+    function pricedisplay(checkboxEle) {
+        if (checkboxEle.checked) {
+            console.log("low to high");
+            //display low to high
+        }
+        else {
+            console.log("high to low");
+            //display high to low
+        }
+    }
 </script>
 
 
