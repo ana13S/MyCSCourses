@@ -65,6 +65,14 @@
 	</center>
 
 <center>
+    <div class="price_option">
+        <label class="check">
+            <input type="checkbox" id="low" onchange="pricedisplay(this)">Price: Low to High
+        </label>
+    </div>
+</center>
+
+<center>
 <div class="list">
 	<div class="items">
 		<div class="item" id="item1">
@@ -122,7 +130,18 @@ firebase.auth().onAuthStateChanged(function(user) {
     } else {
       window.location = 'index.html'
     }
-  });
+});
+
+    function pricedisplay(checkboxEle) {
+        if (checkboxEle.checked) {
+            console.log("low to high");
+            //display low to high
+        }
+        else {
+            console.log("high to low");
+            //display high to low
+        }
+    }
 </script>
 
 
