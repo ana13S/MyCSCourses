@@ -60,6 +60,10 @@
         // console.log(i + response.result.items[i].snippet['description'])
         var description = response.result.items[i].snippet['description'];
         playlistsinfo[name]['description'] = description;
+
+        // console.log(i + response.result.items[i].snippet.thumbnails)
+        var image = response.result.items[i].snippet.thumbnails['high']['url'];
+        playlistsinfo[name]['image'] = image;
       }
       console.log(playlistsinfo)
       return playlistsinfo;
