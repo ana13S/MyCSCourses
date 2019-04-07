@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html>
@@ -129,3 +130,106 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 </body>
 </html>
+=======
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Level Up!</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="homepage.css">
+
+</head>
+<body>
+	<header>
+		<div class = "row">
+			<div class = "webname" style="text-align:center;line-height:100px;height:100px;font-size:35px;">Level Up!
+			</div>
+
+		<ul class="main-nav" style="text-align:center;line-height:20px;height:20px;font-size:15px;">
+			<li class="active"><a href="">Home</a></li>
+			<li><a href="">My Course</a></li>
+		</div>
+	</header>
+
+	<center>
+	<div class="skills">
+		<h2>Skills</h2>
+		<p><br></p>
+		<form>
+  			<label class = "check">
+  				<input type="checkbox" id="C++" onchange="doalert(this,id)">C++
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" id="Java" onchange="doalert(this,id)">Java
+  			</label>
+			<label class = "check">
+  				<input type="checkbox" id="Python" onchange="doalert(this,id)">Python
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" id="Ruby on Rails" onchange="doalert(this,id)">Ruby on Rails
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" id="SQL" onchange="doalert(this,id)">SQL
+  			</label>
+			<label class = "check">
+  				<input type="checkbox" id="Machine Learning" onchange="doalert(this,id)">Machine Learning
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" id="Data Science" onchange="doalert(this,id)">Data Science
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" id="Cryptography" onchange="doalert(this,id)">Cryptography
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" id="Software Engineering" onchange="doalert(this,id)">Software Engineering
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" id="Computer Visions" onchange="doalert(this,id)">Computer Visions
+  			</label>
+    	</form>
+  		</div>
+	</div>
+	</center>
+
+<center>
+<div class="listing">
+	<div class="cards">
+		<div class="card">
+			<p><br></p>
+			<div class="pic">
+				<img src="WeCanDoIt.jpg" alt="Poster" style="width:125px;height:160px;">
+			</div>
+			<div class="words">
+				<h3>TITLE</h3>
+				<h4>Author</h4>
+				<h4>Content</h4>
+				<p>Description</p>
+			</div>
+			<div class="buttons">
+				<h3>$0</h3>
+				<button type="button" class="btn btn-default btn-sm">Add
+        		</button>
+			</div>
+		</div>
+	</div>
+</div>
+</center>
+
+<script type="text/javascript">
+	function doalert(checkboxEle, id){
+		if(checkboxEle.checked){
+			console.log("Checked");
+			console.log(id);
+			//add id
+		}
+		else{
+			console.log("UNCHECKED");
+		}
+	}
+</script>
+
+
+</body>
+</html>
+>>>>>>> 134ff8fcd80c141cbf716cdb2f8d60f0664fcd40
