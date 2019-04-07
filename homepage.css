@@ -93,6 +93,11 @@ header
 	text-align:left;
 }
 
+.addButton {
+  color:pink;
+  background-color: pink;
+}
+
 .right-panel {
   float:left;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;

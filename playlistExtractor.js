@@ -1,5 +1,5 @@
 function populatePlaylists(field, indices) {
-  field = "Learn ".concat(field);  
+  field = "Learn ".concat(field); 
   console.log("Start fetching playlists for ", field);
     gapi.client.setApiKey("AIzaSyAya7y971pPxYE4no2UW7DtGvZvAAdSIQ4");
     gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function() {
@@ -30,7 +30,10 @@ function populatePlaylists(field, indices) {
         var author = response.result.items[i].snippet.channelTitle;
 
         index = indices[0]+1;
-        indices[0] = indices[0]+1;
+        indices[0] = index;
+        console.log("Index:", index);
+          document.getElementById("item".concat(index.toString())).style.display = 'block';
+      
           let txtTitle = document.getElementById("title".concat(index.toString()));
           let link = document.getElementById("link".concat(index.toString()));
           let txtAuthor = document.getElementById("author".concat(index.toString()));
@@ -38,7 +41,7 @@ function populatePlaylists(field, indices) {
           let thumbnail = document.getElementById("thumbnail".concat(index.toString()));
           let price = document.getElementById("price".concat(index.toString()));
           let btnAdd = document.getElementById("btnAdd".concat(index.toString()));
-      
+        
           txtTitle.innerHTML=name;
           txtAuthor.innerHTML=author;
           txtContent.innerHTML=description;
