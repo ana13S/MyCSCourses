@@ -2,61 +2,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My CS Course</title>
+	<title>Level Up!</title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="homepage.css">
+	<link href = "/bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+  <script src = "/scripts/jquery.min.js"></script>
+  <script src = "/bootstrap/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 	<header>
 		<div class = "row">
-			<div class = "webname" style="text-align:center;line-height:100px;height:100px;font-size:35px;">My CS Course
+			<div class = "webname" style="text-align:center;line-height:100px;height:100px;font-size:35px;">Level Up!
 			</div>
 
 		<ul class="main-nav" style="text-align:center;line-height:20px;height:20px;font-size:15px;">
-			<li><a href="">Home</a></li>
+			<li class="active"><a href="">Home</a></li>
 			<li><a href="">My Course</a></li>
 		</div>
 	</header>
 
 	<center>
-	<div class="dropdown">
-  		<button onclick="myFunction()" class="dropbtn">Categories</button>
-  		<div id="myDropdown" class="dropdown-content">
-    		<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    		<a href="#c++">C++</a>
-			<a href="#Java">Java</a>
-			<a href="#python">Python</a>
-			<a href="#ruby on rails">Ruby On Rails</a>
-    		<a href="#SQL">SQL</a>
-    		<a href="#Machine Learning">Machine Learning</a>
-    		<a href="#data science">Data Science</a>
-    		<a href="#cryptography">Cryptography</a>
-    		<a href="#Software Engineering">Software Engineering</a>
-    		<a href="#computer visions">Computer Visions</a>
+	<div class="skills">
+		<h2>Skills</h2>
+		<p></p>
+		<form>
+  			<label class = "check">
+  				<input type="checkbox" value="">C++
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" value="">Java
+  			</label>
+			<label class = "check">
+  				<input type="checkbox" value="">Python
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" value="">Ruby on Rails
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" value="">SQL
+  			</label>
+			<label class = "check">
+  				<input type="checkbox" value="">Machine Learning
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" value="">Data Science
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" value="">Cryptography
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" value="">Software Engineering
+  			</label>
+  			<label class = "check">
+  				<input type="checkbox" value="">Computer Visions
+  			</label>
+    	</form>
   		</div>
 	</div>
-</center>
+	</center>
 
-<script>
-	function myFunction() {
-  		document.getElementById("myDropdown").classList.toggle("show");
-	}
-
-	function filterFunction() {
-  		var input, filter, ul, li, a, i;
-  		input = document.getElementById("myInput");
-  		filter = input.value.toUpperCase();
-  		div = document.getElementById("myDropdown");
-  		a = div.getElementsByTagName("a");
-  		for (i = 0; i < a.length; i++) {
-    		txtValue = a[i].textContent || a[i].innerText;
-    		if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      			a[i].style.display = "";
-    		} else {
-      			a[i].style.display = "none";
-    		}
-  		}
-	}
-</script>
 </body>
 </html>
