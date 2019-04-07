@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My CS Course</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<header>
+		<div class = "row">
+			<div class = "webname" style="text-align:center;line-height:100px;height:100px;font-size:35px;">My CS Course
+			</div>
+
+		<ul class="main-nav" style="text-align:center;line-height:20px;height:20px;font-size:15px;">
+			<li><a href="">Home</a></li>
+			<li><a href="">My Course</a></li>
+		</div>
+	</header>
+
+	<center>
+	<div class="dropdown">
+  		<button onclick="myFunction()" class="dropbtn">Categories</button>
+  		<div id="myDropdown" class="dropdown-content">
+    		<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    		<a href="#c++">C++</a>
+			<a href="#Java">Java</a>
+			<a href="#python">Python</a>
+			<a href="#ruby on rails">Ruby On Rails</a>
+    		<a href="#SQL">SQL</a>
+    		<a href="#Machine Learning">Machine Learning</a>
+    		<a href="#data science">Data Science</a>
+    		<a href="#cryptography">Cryptography</a>
+    		<a href="#Software Engineering">Software Engineering</a>
+    		<a href="#computer visions">Computer Visions</a>
+  		</div>
+	</div>
+</center>
+
+<script>
+	function myFunction() {
+  		document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	function filterFunction() {
+  		var input, filter, ul, li, a, i;
+  		input = document.getElementById("myInput");
+  		filter = input.value.toUpperCase();
+  		div = document.getElementById("myDropdown");
+  		a = div.getElementsByTagName("a");
+  		for (i = 0; i < a.length; i++) {
+    		txtValue = a[i].textContent || a[i].innerText;
+    		if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      			a[i].style.display = "";
+    		} else {
+      			a[i].style.display = "none";
+    		}
+  		}
+	}
+</script>
+</body>
+</html>
