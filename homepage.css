@@ -18,13 +18,6 @@ header
 	color:black;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
 .main-nav{
 	list-style: none;
 	margin-top:0px;
@@ -101,3 +94,30 @@ header
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+
+.card{
+	background-color: pink;
+	height:200px;
+	width:1000px;
+	border: 1px solid black;
+}
+
+.pic{
+	float:left;
+	width:300px;
+	padding:5px;
+}
+
+.words{
+	float:left;
+	width:300px;
+	padding:5px;
+	text-align:left;
+}
+
+.buttons{
+	float:left;
+	width:300px;
+	padding:5px;
+}
