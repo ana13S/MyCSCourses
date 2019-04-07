@@ -1,0 +1,41 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+  
+  function extract_book(field = 'mongodb'){
+    var link = 'https://api.itbook.store/1.0/search/'+field;
+
+    var xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.open("GET", link, true); // true for asynchronous 
+    // xmlHttp.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+    // xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+    xmlHttp.send();
+    xmlHttp.onreadystatechange = function(response) { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            var json = JSON.parse(xmlHttp.responseText);
+            var i;
+            var books = {}
+
+            for (i = 0; i < json.books.length; i++){
+                var name = json.books[i]['title'];
+                books[i] = {}
+                books[i][name] = {};
+
+                books[i][name]['description'] = json.books[i]['subtitle'];
+                books[i][name]['image'] = json.books[i]['image'];
+                books[i][name]['price'] = json.books[i]['price'];
+                books[i][name]['url'] = json.books[i]['url'];
+            }
+            console.log(books)
+            return books
+        }
+    }
+}
+
+
+
+
+</script>
+
+<button onclick="extract_book(field='mongodb')">book</button>
