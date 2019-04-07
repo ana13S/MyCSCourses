@@ -21,8 +21,10 @@
     btnLogin.addEventListener('click', e => {
         const email = txtEmail.value;
         const pass = txtPassword.value;
-        const auth = firebase.auth();
+        let auth = firebase.auth();
 
+        auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        
         console.log('Email:', email);
         console.log('Password:', pass);
 
@@ -53,7 +55,7 @@
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
             console.log(firebaseUser);
-            //TODO: Go to list page
+            window.location = 'homepage.html'
         } else {
             console.log('Not logged in');
         }
