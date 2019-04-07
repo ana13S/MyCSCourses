@@ -35,6 +35,14 @@ header
 	font-size:15px;
 }
 
+.main-nav li.active a{
+	border: 2px solid black;
+}
+
+.main-nav li a:hover{
+	border: 2px solid black;
+}
+
 .dropbtn {
   background-color: salmon;
   color: white;
@@ -86,3 +94,31 @@ header
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+
+.card{
+	margin-top:15px;
+	background-color: pink;
+	height:200px;
+	width:1000px;
+	border: 1px solid black;
+}
+
+.pic{
+	float:left;
+	width:300px;
+	padding:5px;
+}
+
+.words{
+	float:left;
+	width:300px;
+	padding:5px;
+	text-align:left;
+}
+
+.buttons{
+	float:left;
+	width:300px;
+	padding:5px;
+}
