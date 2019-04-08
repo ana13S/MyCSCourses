@@ -31,44 +31,44 @@
   //             function(err) { console.error("Execute error", err); });
   //           }
 
-  function extractinfo(field = 'computer science'){
+  function extractinfo(field = 'computer science') {
     // loadClient();
     gapi.client.setApiKey("AIzaSyBjrguDsNTj8Vq4MxXFmgYluRU_wGe-jgE");
-    gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function() {
+    gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function () {
       var json = gapi.client.youtube.search.list({
-      "part": "snippet",
-      "maxResults": 25,
-      "q": field,
-      "type": "playlist"
-    }).then(function(response) {
-      
-      // var playlistslinks = [];
-      var playlistsinfo = {}
+        "part": "snippet",
+        "maxResults": 25,
+        "q": field,
+        "type": "playlist"
+      }).then(function (response) {
 
-      var i;
-      console.log("Response", response);
-      for (i = 0; i < response.result.items.length; i++){
-        // console.log(i + response.result.items[i].id)
-        var playlistid = response.result.items[i].id['playlistId']
-        var url = 'https://www.youtube.com/playlist?list='+playlistid
+        // var playlistslinks = [];
+        var playlistsinfo = {}
 
-        // console.log(i + response.result.items[i].snippet['title'])
-        var name = response.result.items[i].snippet['title'];
-        playlistsinfo[name] = {};
-        playlistsinfo[name]['url'] = url;
+        var i;
+        console.log("Response", response);
+        for (i = 0; i < response.result.items.length; i++) {
+          // console.log(i + response.result.items[i].id)
+          var playlistid = response.result.items[i].id['playlistId']
+          var url = 'https://www.youtube.com/playlist?list=' + playlistid
 
-        // console.log(i + response.result.items[i].snippet['description'])
-        var description = response.result.items[i].snippet['description'];
-        playlistsinfo[name]['description'] = description;
+          // console.log(i + response.result.items[i].snippet['title'])
+          var name = response.result.items[i].snippet['title'];
+          playlistsinfo[name] = {};
+          playlistsinfo[name]['url'] = url;
 
-        // console.log(i + response.result.items[i].snippet.thumbnails)
-        var image = response.result.items[i].snippet.thumbnails['high']['url'];
-        playlistsinfo[name]['image'] = image;
-      }
-      console.log(playlistsinfo)
-      return playlistsinfo;
-  });
-     });
+          // console.log(i + response.result.items[i].snippet['description'])
+          var description = response.result.items[i].snippet['description'];
+          playlistsinfo[name]['description'] = description;
+
+          // console.log(i + response.result.items[i].snippet.thumbnails)
+          var image = response.result.items[i].snippet.thumbnails['high']['url'];
+          playlistsinfo[name]['image'] = image;
+        }
+        console.log(playlistsinfo)
+        return playlistsinfo;
+      });
+    });
   }
   gapi.load("client");
 </script>
@@ -76,6 +76,3 @@
 <!-- <button onclick="loadClient()">load</button> -->
 <!-- <button onclick="execute()">execute</button> -->
 <button onclick="extractinfo()">lists</button>
-
-
-

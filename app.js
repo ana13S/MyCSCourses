@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const config = {
         apiKey: "AIzaSyAya7y971pPxYE4no2UW7DtGvZvAAdSIQ4",
         authDomain: "mycscourses-438b9.firebaseapp.com",
@@ -16,7 +16,7 @@
     const txtPassword = document.getElementById('txtPassword');
     const btnLogin = document.getElementById('btnLogin');
     const btnSignUp = document.getElementById('btnSignUp');
-    
+
     //Add login event
     btnLogin.addEventListener('click', e => {
         const email = txtEmail.value;
@@ -24,7 +24,7 @@
         let auth = firebase.auth();
 
         auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
-        
+
         console.log('Email:', email);
         console.log('Password:', pass);
 
@@ -53,7 +53,7 @@
 
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
-        if(firebaseUser) {
+        if (firebaseUser) {
             console.log(firebaseUser);
             window.location = 'homepage.html'
         } else {

@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="homepage.css">
     <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
-    <script src="displayList.js" type="text/javascript"></script>
-    <script src="playlistExtractor.js" type="text/javascript"></script>
+    <script src="displayMyBooks.js" type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
 </head>
 <body>
     <header>
@@ -19,8 +19,9 @@
             </div>
 
             <ul class="main-nav" style="text-align:center;line-height:20px;height:20px;font-size:15px;">
-                <li><a href="">HOME</a></li>
+                <li><a href="homepage.html">HOME</a></li>
                 <li class="active"><a href="">MY PLAN</a></li>
+            </ul>
         </div>
     </header>
 
@@ -28,30 +29,194 @@
         <div class="list">
             <div class="items">
                 <div class="item" id="item1">
-                    <p><br></p>
-                    <div class="thumbnail">
-                        <img id="thumbnail1" alt="Poster" style="width:210px;height:160px;">
-                    </div>
-                    <div class="description">
-                        <a href="" id="link1"><h3 id="title1">TITLE</h3></a>
-                        <h4 id="author1">Author</h4>
-                        <h4 id="content1">Content</h4>
-                    </div>
-                    <div class="right-panel">
-                        <h3 id="price1">$0</h3>
-                        <button type="button1" class="btn btn-default btn-sm" id="btnAdd">
-                            Add
-                        </button>
+            <p><br></p>
+            <div class="thumbnail">
+                <img id="thumbnail1" alt="Poster" style="width:210px;height:160px;">
+            </div>
+            <div class="description">
+                <a href="" id="link1"><h3 id="title1">TITLE</h3></a>
+                <h4 id="author1">Author</h4>
+                <h4 id="content1">Content</h4>
+            </div>
+            <div class="right-panel">
+                <h3 id="price1">$0</h3>
+                <div class="addButton">
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="item" id="item2">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail2" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link2"><h3 id="title2">TITLE</h3></a>
+                    <h4 id="author2">Author</h4>
+                    <h4 id="content2">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price2">$0</h3>
+                    <div class="addButton">
                     </div>
                 </div>
+            
+        </div>  
+
+        <div class="item" id="item3">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail3" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link3"><h3 id="title3">TITLE</h3></a>
+                    <h4 id="author3">Author</h4>
+                    <h4 id="content3">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price3">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="item" id="item4">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail4" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link4"><h3 id="title4">TITLE</h3></a>
+                    <h4 id="author4">Author</h4>
+                    <h4 id="content4">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price4">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="item" id="item5">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail5" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link5"><h3 id="title5">TITLE</h3></a>
+                    <h4 id="author5">Author</h4>
+                    <h4 id="content5">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price5">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="item" id="item6">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail6" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link6"><h3 id="title6">TITLE</h3></a>
+                    <h4 id="author6">Author</h4>
+                    <h4 id="content6">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price6">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="item" id="item7">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail7" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link7"><h3 id="title7">TITLE</h3></a>
+                    <h4 id="author7">Author</h4>
+                    <h4 id="content7">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price7">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="item" id="item8">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail8" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link8"><h3 id="title8">TITLE</h3></a>
+                    <h4 id="author8">Author</h4>
+                    <h4 id="content8">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price8">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="item" id="item9">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail9" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link9"><h3 id="title9">TITLE</h3></a>
+                    <h4 id="author9">Author</h4>
+                    <h4 id="content9">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price9">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="item" id="item10">
+                <p><br></p>
+                <div class="thumbnail">
+                    <img id="thumbnail10" alt="Poster" style="width:210px;height:160px;">
+                </div>
+                <div class="description">
+                    <a href="" id="link10"><h3 id="title10">TITLE</h3></a>
+                    <h4 id="author10">Author</h4>
+                    <h4 id="content10">Content</h4>
+                </div>
+                <div class="right-panel">
+                    <h3 id="price10">$0</h3>
+                    <div class="addButton">
+                    </div>
+                </div>
+            
+        </div>
 
             </div>
         </div>
     </center>
 
+
+</body>
+</html>
     <script type="text/javascript">
-        var IdArr = [];
-        
+        var email = "";
         const config = {
             apiKey: "AIzaSyAya7y971pPxYE4no2UW7DtGvZvAAdSIQ4",
             authDomain: "mycscourses-438b9.firebaseapp.com",
@@ -62,22 +227,26 @@
         };
         firebase.initializeApp(config);
 
-        firebase.auth().onAuthStateChanged(function (user) {
+        
+            function toggle(className, displayState){
+    var elements = document.getElementsByClassName(className);
+    for (var i = 0; i < elements.length; i++){
+        elements[i].style.display = displayState;
+    }
+    }
+
+        firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 // User is signed in. Remain on homepage
-                var email = user.email;
+                email = user.email;
+                uid = user.uid;
+                toggle("item", "none");
+                displayBooks();
 
             } else {
                 window.location = 'index.html'
             }
         });
-
-        var database = firebase.database().ref();
-        function writeData()
-
+        
     </script>
 
-
-
-</body>
-</html>
